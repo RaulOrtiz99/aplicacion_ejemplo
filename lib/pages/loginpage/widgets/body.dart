@@ -1,5 +1,8 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:aplicacion_ejemplo/pages/homepage/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class BoddyLogin extends StatefulWidget {
   BoddyLogin({Key? key}) : super(key: key);
@@ -17,37 +20,37 @@ class _BoddyLoginState extends State<BoddyLogin> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: 30,
+        const SizedBox(
+          height: 50,
         ),
-        Center(
+        const Center(
             child: Text(
-          "My library",
+          "Libroteca",
           style: TextStyle(
-              fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 40, fontWeight: FontWeight.bold, color: Colors.black),
         )),
         Center(
-          child: Image.asset(
-            'assets/logolibrary.png',
-            height: 150,
-          ),
+          child: Lottie.network(
+              'https://assets6.lottiefiles.com/packages/lf20_userh0rw.json',
+              height: 150),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Container(
+          // ignore: prefer_const_constructors
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Color.fromARGB(255, 230, 230, 230),
               borderRadius: const BorderRadius.all(Radius.circular(20))),
           width: 300,
           height: 400,
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
-                "Login",
+              const Text(
+                "Inicio sesion",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               Padding(
@@ -56,7 +59,7 @@ class _BoddyLoginState extends State<BoddyLogin> {
                   width: 250,
                   child: TextField(
                       decoration: InputDecoration(
-                    labelText: 'Email',
+                    labelText: 'Correo',
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)),
                     border: OutlineInputBorder(
@@ -70,7 +73,7 @@ class _BoddyLoginState extends State<BoddyLogin> {
                   width: 250,
                   child: TextField(
                       decoration: InputDecoration(
-                    labelText: 'Password',
+                    labelText: 'Contraseña',
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)),
                     border: OutlineInputBorder(
@@ -86,9 +89,9 @@ class _BoddyLoginState extends State<BoddyLogin> {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) => HomePage()));
                     },
-                    child: Text("Sign In"),
+                    child: const Text("Iniciar sesion"),
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.orange,
+                        primary: Colors.black,
                         shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(20)))),
               )
